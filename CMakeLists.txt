@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 message(STATUS "TriangleDelaunay2D: Building as a Remote VTK module")
 
 # Search for Schewchuk's Triangle thirdparty library
-if(NOT EXISTS ${CMAKE_SOURCE_DIR}/triangle.c)
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/triangle.c)
   message(FATAL_ERROR "Shewchuk's Triangle sources not found in sources directory! Please copy triangle sources in module sources directory.")
 endif()
 
@@ -19,11 +19,11 @@ set(Module_SRCS
   triangle.c
   )
 
-set_property(SOURCE ${CMAKE_SOURCE_DIR}/triangle.c
+set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/triangle.c
  APPEND PROPERTY COMPILE_DEFINITIONS
     ANSI_DECLARATORS NO_TIMER TRILIBRARY REDUCED CDT_ONLY ${TRIANGLE_EXTRA_FLAGS})
 
-set_property(SOURCE ${CMAKE_SOURCE_DIR}/predicates.c
+set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/predicates.c
   APPEND PROPERTY COMPILE_DEFINITIONS ${TRIANGLE_EXTRA_FLAGS})
 
 vtk_module_library(vtkTriangleDelaunay2D ${Module_SRCS})
