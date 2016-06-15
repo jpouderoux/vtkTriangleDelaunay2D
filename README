@@ -1,0 +1,14 @@
+vtkTriangleDelaunay2D introduces a VTK class to compute 2D Delaunay triangulations
+using Shewchuck's Triangle.
+
+Triangle is "a Two-Dimensional Quality Mesh Generator and Delaunay Triangulator".
+It is developed by Jonathan Richard Shewchuk.
+
+For licensing reasons the code of Triangle is not available within the module:
+"Please note that although Triangle is freely available, it is copyrighted by
+the author and may not be sold or included in commercial products without a license. "
+
+It has to be downloaded from its web site:
+  https://www.cs.cmu.edu/~quake/triangle.html
+
+Extract the archive in this directory before configuring the project with CMake.
