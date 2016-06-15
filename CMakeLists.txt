@@ -26,4 +26,17 @@ set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/triangle.c
 set_property(SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/predicates.c
   APPEND PROPERTY COMPILE_DEFINITIONS ${TRIANGLE_EXTRA_FLAGS})
 
+option(DELAUNAYTRIANGLE2D_OVERRIDE_VTKIMPL "Override vtkDelaunay2D with vtkTriangleDelaunay2D (through factory)" FALSE)
+if(DELAUNAYTRIANGLE2D_OVERRIDE_VTKIMPL)
+  include(vtkObjectFactory)
+  vtk_add_override(vtkDelaunay2D vtkTriangleDelaunay2D)
+  vtk_object_factory_configure("${vtk_module_overrides}")
+  set_source_files_properties(${vtk-module}ObjectFactory.cxx
+    PROPERTIES
+      WRAP_EXCLUDE 1
+      WRAP_EXCLUDE_PYTHON 1)
+  list(APPEND Module_SRCS
+    ${CMAKE_CURRENT_BINARY_DIR}/${vtk-module}ObjectFactory.cxx)
+endif()
+
 vtk_module_library(vtkTriangleDelaunay2D ${Module_SRCS})
