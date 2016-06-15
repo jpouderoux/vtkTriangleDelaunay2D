@@ -34,7 +34,8 @@ extern "C"
 #endif
 #ifndef REAL
 # define REAL double
-#endif
+#endif#
+define ANSI_DECLARATORS
 #include "triangle.h"
 }
 #include "predicates.h"
