@@ -11,4 +11,6 @@ vtk_module(vtkTriangleDelaunay2D
     vtkTestingCore
   KIT
     vtkRemote
+  TCL_NAME
+    vtkTriangleDelaunay
 )
