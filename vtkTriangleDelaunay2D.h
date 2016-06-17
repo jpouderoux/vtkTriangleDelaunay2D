@@ -22,7 +22,7 @@
 
 #include <vtkDelaunay2D.h>
 
-class vtkTriangleDelaunay2D_EXPORT vtkTriangleDelaunay2D : public vtkDelaunay2D
+class VTKTRIANGLEDELAUNAY2D_EXPORT vtkTriangleDelaunay2D : public vtkDelaunay2D
 {
 public:
   vtkTypeMacro(vtkTriangleDelaunay2D, vtkPolyDataAlgorithm);

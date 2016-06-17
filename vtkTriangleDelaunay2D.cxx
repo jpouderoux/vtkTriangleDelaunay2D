@@ -29,13 +29,13 @@
 
 extern "C"
 {
+#define ANSI_DECLARATORS
 #ifndef VOID
 # define VOID void
 #endif
 #ifndef REAL
 # define REAL double
-#endif#
-define ANSI_DECLARATORS
+#endif
 #include "triangle.h"
 }
 #include "predicates.h"
